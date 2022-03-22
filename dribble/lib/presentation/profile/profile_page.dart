@@ -1,4 +1,5 @@
 import 'package:dribble/presentation/profile/widgets/card_profile_information_widget.dart';
+import 'package:dribble/presentation/profile/widgets/feature_article_banner_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/discover_list_item_widget.dart';
@@ -17,17 +18,29 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
-          child: Column(
-        children: [
-          CardProfileInformationWidget(),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 20),
-            child: natureDiscoveryData(),
-          ),
-        ],
+          child: SingleChildScrollView(
+        child: Column(
+          children: [
+            CardProfileInformationWidget(),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: natureDiscoveryData(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 10),
+              child: FeatureArticleBannerWidget(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       )),
     );
   }
